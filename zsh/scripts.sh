@@ -39,3 +39,11 @@ vman() {
         echo "No manual entry for $*"
     fi
 }
+
+duckduckgo() {
+    lynx -vikeys -accept_all_cookies "https://lite.duckduckgo.com/lite/?q=$@"
+}
+
+wikipedia() {
+    lynx -vikeys -accept_all_cookies "https://en.wikipedia.org/wiki?search=$@"
+}
