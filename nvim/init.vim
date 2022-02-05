@@ -1,47 +1,39 @@
+set nocompatible              " required
+filetype off                  " required
+
 " Plugins
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
-    Plug 'chrisbra/csv.vim'
-    Plug 'moll/vim-bbye'
-    Plug 'simeji/winresizer'
-    Plug 'junegunn/fzf.vim'
-    Plug 'simnalamburt/vim-mundo'
-    Plug 'christoomey/vim-tmux-navigator'
-
-    " For coc.vim to work, you'll need nodejs and yarn (both available in official repos).
-    " Only bash-language-server is configured with coc.vim. See the file coc-settings.json.
-    " To make it work, you need to install bash-language-server: `sudo pacman -S bash-language-server`
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-    " Collection of snippets
-    Plug 'honza/vim-snippets'
-
-    " Compiler and linter
-    Plug 'neomake/neomake'
-
-    " Theme gruvbox
-    Plug 'morhetz/gruvbox'
-
-    " Status bar
-    Plug 'itchyny/lightline.vim'
-
-    "tmux
-    Plug 'wellle/tmux-complete.vim'
-    Plug 'tmux-plugins/vim-tmux'
-    Plug 'tmux-plugins/vim-tmux-focus-events'
-    Plug 'christoomey/vim-tmux-navigator'
-
-    " Man pages in Neovim
-    Plug 'jez/vim-superman'
+    Plug 'vim-scripts/indentpython.vim'
+    Plug 'jnurmine/Zenburn'
+    Plug 'mattn/emmet-vim'
 call plug#end()
 
 set clipboard+=unnamedplus
 
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
 set noswapfile
+
+set textwidth=79
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+set expandtab
+set fileformat=unix
+
+set nospell "disable highlighting typos
+set ic "make case insensitive for searches
+set hls "highlight searches
+set showmatch "shows matching pairs of brackets
+syntax enable "syntax highlighting is on
+
+set visualbell "disable bell sounds in vim
+
+set splitbelow
+set splitright
+
+"Enable folding
+set foldmethod=indent
+set foldlevel=99
 
 " save undo trees in files
 set undofile
@@ -54,50 +46,9 @@ set undoreload=10000
 set number
 set relativenumber
 
-" use 4 spaces instead of tab ()
-" copy indent from current line when starting a new line
+set encoding=utf-8
 
-set autoindent
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
-" Show substitution
 set inccommand=nosplit
-
-nnoremap <space> <nop>
-let mapleader = "\<space>"
-
-nnoremap <leader>bn :bn<cr> ;buffer next
-nnoremap <leader>tn gt ;new tab
-
-" Config for chrisbra/csv.vim
-augroup filetype_csv
-    autocmd! 
-
-    autocmd BufRead,BufWritePost *.csv :%ArrangeColumn!
-    autocmd BufWritePre *.csv :%UnArrangeColumn
-augroup END
-
-" Config for fzf.vim (BONUS :D)
-nnoremap <leader>f :Files<cr>
-
-nnoremap <c-w>h <c-w>s
-
-"###########
-"# coc.vim #
-"###########
-
-" Coc extensions (need to install yarn or npm, both available in official repo of Arch Linux)
-let g:coc_global_extensions = [
-            \ 'coc-snippets',
-            \ 'coc-css', 
-            \ 'coc-html',
-            \ 'coc-json', 
-            \]
-
-" This is a very basic configuration - you can do way more than that (but do you really want to?)
 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -116,78 +67,64 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-    " Recently vim can merge signcolumn and number column into one
-    set signcolumn=number
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"create and map , to <leader>
+let mapleader=","
+
+let g:SimplyFold_docstring_preview=0
+let g:SimpylFold_fold_docstring=0
+let gSimpylFold_fold_import=0
+let g:SimpylFold_fold_blank=0
+
+let g:user_emmet_leader_key=','
+
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix
+
+"Flagging Unnecessary Whitespace
+highlight BadWhitespace ctermbg=red guibg=darkred
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+let python_highlight_all=1
+syntax on
+
+if has('gui_running')
+	set background=dark
+	colorscheme solarized
 else
-    set signcolumn=yes
+	colorscheme zenburn
 endif
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"python with virtualenv support
+python3 << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
 
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" Learning vim
 
-" Use <c-space> to trigger completion.
-if has('nvim')
-    inoremap <silent><expr> <c-space> coc#refresh()
-else
-    inoremap <silent><expr> <c-@> coc#refresh()
-endif
+" - Use f(character) to move to next occurence of character. Useful for jumping
+"   to parenthesis and stuff.
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-            \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" - vi( will choose the text inside the parenthesis. va( will choose including
+"   the parenthesis. this works for c as well as in caw.
 
-"###########
-"# Neomake #
-"###########
+" - learn about creating marks between two files to jump to those marks.
 
-" Needs to install shellcheck and vint: `sudo pacman -S shellcheck vint`
-
-" Neomake signs in the gutter
-let g:neomake_error_sign = {'text': '', 'texthl': 'NeomakeErrorSign'}
-let g:neomake_warning_sign = {
-            \   'text': '',
-            \   'texthl': 'NeomakeWarningSign',
-            \ }
-let g:neomake_message_sign = {
-            \   'text': '',
-            \   'texthl': 'NeomakeWarningSign',
-            \ }
-let g:neomake_info_sign = {'text': 'ℹ', 'texthl': 'NeomakeInfoSign'}
-
-" update neomake when save file
-call neomake#configure#automake('w')
-
-command! -bang -nargs=* -complete=file Make NeomakeProject <args>
-
-" Enable linters
-let g:neomake_sh_enabled_makers = ['shellcheck']
-let g:neomake_vim_enabled_makers = ['vint']
-
-"###########
-"# Gruvbox #
-"###########
-
-autocmd vimenter * ++nested colorscheme gruvbox 
-
-"#############
-"# lightline #
-"#############
-
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+" - Use _ and then ctrl + y to input html doctype template after creating a
+"   html file. There are more uses to c-y -> check out the README from time to
+"   time.
