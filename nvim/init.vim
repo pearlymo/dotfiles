@@ -52,6 +52,7 @@ set undolevels=10000
 set undoreload=10000
 
 set number
+set relativenumber
 
 " use 4 spaces instead of tab ()
 " copy indent from current line when starting a new line
