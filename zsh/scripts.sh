@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-# This will make me directly acess folders inside repos form any other
-# directories
-export CDPATH=/mnt/c/Users/mothi/repos
-
 # Compress a directory
 compress() {
     tar cvzf $1.tar.gz $1
