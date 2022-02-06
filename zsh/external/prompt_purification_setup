@@ -19,8 +19,6 @@
 # %(?..) => prompt conditional - %(condition.true.false)
 
 # Display git status
-# TODO to refactor with switch / using someting else than grep
-# Might be faster using ripgrep too
 git_prompt_status() {
   local INDEX STATUS
 
@@ -127,7 +125,7 @@ prompt_purification_setup() {
 
     prompt_git_branch
     RPROMPT='$(prompt_git_info) $(git_prompt_status)'
-    PROMPT=$'%F{white}%~ %B%F{blue}>%f%b '
+    PROMPT=$'%F{white}%~ %B%F{blue}'$'\n''>%f%b '
 }
 
 prompt_purification_setup
