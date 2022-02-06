@@ -19,6 +19,8 @@ export SAVEHIST=10000
 
 export DOTFILES="$HOME/dotfiles"
 
+export CDPATH="$HOME/Repos"
+
 # fzf and ripgrep    
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"    
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
