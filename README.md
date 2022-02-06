@@ -9,6 +9,8 @@ This is my personal configurations.
 - [ ] WSL and dotfiles
 - [ ] Repos
 - [ ] Generate new SSH keys
+- [ ] Steam
+- [ ] Epic Games
 - [ ] Ableton Live
 - [ ] Spitfire
 - [ ] Asio4all
