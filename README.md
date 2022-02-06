@@ -72,16 +72,18 @@ This is my personal configurations.
 - [ ] Dotfiles
 - [ ] Generate new SSH keys
 - [ ] Zoom
-- [ ] Microsoft Teams
+- [ ] Microsoft Teams (Use through Google Chrome. App not working and not
+  supported on Firefox. Retry building from a repository?)
 - [ ] Skype
-- [ ] Calibre
-- [ ] Tor Browser
+- [ ] Calibre (not needed for now)
+- [ ] Tor Browser (advanced option to add port in Firefox)
 - [ ] Libre Office 
 - [ ] Vlc Player
 - [ ] Nighthawks as wallpaper
-- [ ] NordVPN
+- [ ] NordVPN (needs systemctl commands to run)
 - [ ] Qbittorent
 - [ ] Darktable
-- [ ] Wine
+- [ ] GIMP
+- [ ] Wine (needs to enable multilib)
 - [ ] MusicET if still pending
 - [ ] Makemusic Finale
