@@ -1,34 +1,12 @@
 #!/bin/zsh
 
+# This will make me directly acess folders inside repos form any other
+# directories
+export CDPATH=/mnt/c/Users/mothi/repos
+
 # Compress a directory
 compress() {
     tar cvzf $1.tar.gz $1
-}
-
-# Fuzzy find a tmuxp layout config
-ftmuxp() {
-    if [[ -n $TMUX ]]; then
-        return
-    fi
-    
-    # get the IDs
-    ID="$(ls $XDG_CONFIG_HOME/tmuxp | sed -e 's/\.yml$//')"
-    if [[ -z "$ID" ]]; then
-        tmux new-session
-    fi
-
-    create_new_session="Create New Session"
-
-    ID="${create_new_session}\n$ID"
-    ID="$(echo $ID | fzf | cut -d: -f1)"
-
-    if [[ "$ID" = "${create_new_session}" ]]; then
-        tmux new-session
-    elif [[ -n "$ID" ]]; then
-        # Rename the current urxvt tab to session name
-        printf '\033]777;tabbedx;set_tab_name;%s\007' "$ID"
-        tmuxp load "$ID"
-    fi
 }
 
 # open man page in vim
@@ -46,4 +24,19 @@ duckduckgo() {
 
 wikipedia() {
     lynx -vikeys -accept_all_cookies "https://en.wikipedia.org/wiki?search=$@"
+}
+
+gacp () {
+    git add $1
+    git commit -m "$2"
+    git push
+}
+
+# A function to shortcut g++ compiler for cpp using the options suggested from
+# learncpp.com for beginners
+# -pedantic-errors removes compiler plugins
+# -Wall part raises the warning levels
+# -std=c++2a adds language standard
+gpp () {
+    g++ -pedantic-errors -Wall -Weffc++ -Wextra -Wsign-conversion -std=c++2a -g $1 -o $2 
 }
