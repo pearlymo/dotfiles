@@ -14,7 +14,7 @@ font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:Comic Shanns Regular 12
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -260,23 +260,26 @@ client.placeholder 	#000000 #0c0c0c $white2 #000000 #0c0c0c
 
 for_window [class="URxvt*"] border pixel 1
 
-# Terminal scratchpad with tmux and three windows: 1. Terminal | 2.Neovim temp file
-for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
-bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
-exec urxvtc -name urxvt_scratchpad \
--e tmux -2 new-session -d -s scratchpad \; \
-new-window -n nvim 'nvim +e /tmp/nvim-tmp.md' \; \
-attach-session -d -t scratchpad
+## Terminal scratchpad with tmux and three windows: 1. Terminal | 2.Neovim temp file
+# for_window [instance="urxvt_scratchpad"] move to scratchpad, border none
+# bindsym $mod+Shift+t [instance="urxvt_scratchpad"] scratchpad show
+# exec urxvtc -name urxvt_scratchpad \
+# -e tmux -2 new-session -d -s scratchpad \; \
+# new-window -n nvim 'nvim +e /tmp/nvim-tmp.md' \; \
+# attach-session -d -t scratchpad
 
-# htop scratchpad
-for_window [instance="htop_scratchpad"] move to scratchpad, border none
-bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
-exec urxvtc -name htop_scratchpad -e htop
+## htop scratchpad
+# for_window [instance="htop_scratchpad"] move to scratchpad, border none
+# bindsym $mod+Shift+p [instance="htop_scratchpad"] scratchpad show
+# exec urxvtc -name htop_scratchpad -e htop
 
 # i3bar
 bar {
     status_command i3status --config ~/.config/i3/i3status.conf
-    
+
+    font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    font pango:DejaVu Sans Mono 10
+
     # Disable all tray icons
     tray_output none
 
