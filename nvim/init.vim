@@ -5,6 +5,8 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
     Plug 'jnurmine/Zenburn'
 call plug#end()
 
+autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+
 set clipboard+=unnamedplus
 
 set noswapfile
