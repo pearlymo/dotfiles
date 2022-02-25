@@ -1,11 +1,8 @@
-set nocompatible              " required
-filetype off                  " required
+set nocompatible
+filetype off
 
-" Plugins
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
-    Plug 'vim-scripts/indentpython.vim'
     Plug 'jnurmine/Zenburn'
-    Plug 'mattn/emmet-vim'
 call plug#end()
 
 set clipboard+=unnamedplus
@@ -13,6 +10,7 @@ set clipboard+=unnamedplus
 set noswapfile
 
 set textwidth=79
+set colorcolumn=80
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -20,7 +18,7 @@ set autoindent
 set expandtab
 set fileformat=unix
 
-set nospell "disable highlighting typos
+set nospell
 set ic "make case insensitive for searches
 set hls "highlight searches
 set showmatch "shows matching pairs of brackets
@@ -104,27 +102,3 @@ if has('gui_running')
 else
 	colorscheme zenburn
 endif
-
-"python with virtualenv support
-"python << EOF
-"import os
-"import sys
-"if 'VIRTUAL_ENV' in os.environ:
-"    project_base_dir = os.environ['VIRTUAL_ENV']
-"    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-"    execfile(activate_this, dict(__file__=activate_this))
-"EOF
-
-" Learning vim
-
-" - Use f(character) to move to next occurence of character. Useful for jumping
-"   to parenthesis and stuff.
-
-" - vi( will choose the text inside the parenthesis. va( will choose including
-"   the parenthesis. this works for c as well as in caw.
-
-" - learn about creating marks between two files to jump to those marks.
-
-" - Use _ and then ctrl + y to input html doctype template after creating a
-"   html file. There are more uses to c-y -> check out the README from time to
-"   time.
