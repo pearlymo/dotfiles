@@ -1,4 +1,3 @@
-*.foreground: #C6C6C6
 *.background: #1C1C1C
 *.cursorColor: #f0f0f0
 
@@ -27,6 +26,9 @@
 *.color7: #e4e4e4
 *.color15: #ffffff
 
+URxvt*transparent: true
+URxvt*shading: 30
+
 URxvt*font: xft:Comic Shanns Regular:style=Regular:size=12:antialias=true
 URxvt*borderLess: false
 URxvt*externalBorder: 0
@@ -42,6 +44,11 @@ URxvt.keysym.Control-Shift-J: perl:tabbedex:prev_tab
 URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
 URxvt.keysym.Control-Shift-H: perl:tabbedex:move_tab_left   
 URxvt.keysym.Control-Shift-L: perl:tabbedex:move_tab_right    
+
+URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Shift-V: eval:paste_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 URxvt*tabbedex.tabbar-fg: 15
 URxvt*tabbedex.tabbar-bg: 236
