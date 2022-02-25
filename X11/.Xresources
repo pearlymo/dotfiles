@@ -1,6 +1,6 @@
 *.foreground: #C6C6C6
 *.background: #1C1C1C
-*.cursorColor: #444444
+*.cursorColor: #f0f0f0
 
 ! black 236 238
 *.color0: #303030
@@ -27,7 +27,7 @@
 *.color7: #e4e4e4
 *.color15: #ffffff
 
-URxvt*font: xft:DejaVuSansMono:size=10:antialias=true
+URxvt*font: xft:Comic Shanns Regular:style=Regular:size=12:antialias=true
 URxvt*borderLess: false
 URxvt*externalBorder: 0
 URxvt*internalBorder: 4
