@@ -11,6 +11,8 @@ set clipboard+=unnamedplus
 
 set noswapfile
 
+set maxmempattern=2000000
+
 set textwidth=79
 set colorcolumn=80
 set tabstop=4
@@ -97,6 +99,8 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
 syntax on
+
+autocmd BufNewFile *.html 0r $HOME/.config/nvim/templates/html5.html
 
 if has('gui_running')
 	set background=dark
