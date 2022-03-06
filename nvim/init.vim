@@ -59,9 +59,6 @@ set hidden
 set nobackup
 set nowritebackup
 
-" Give more space for displaying messages.
-set cmdheight=2
-
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
@@ -82,8 +79,6 @@ let g:SimplyFold_docstring_preview=0
 let g:SimpylFold_fold_docstring=0
 let gSimpylFold_fold_import=0
 let g:SimpylFold_fold_blank=0
-
-let g:user_emmet_leader_key=','
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
