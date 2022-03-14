@@ -66,14 +66,17 @@ set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
+"create and map , to <leader>
+let mapleader=","
+
 "split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"create and map , to <leader>
-let mapleader=","
+map <C-S> :w<CR>
+inoremap <C-S> <C-[>:w<CR>
 
 let g:SimplyFold_docstring_preview=0
 let g:SimpylFold_fold_docstring=0
