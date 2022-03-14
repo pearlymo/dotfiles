@@ -78,6 +78,8 @@ nnoremap <C-H> <C-W><C-H>
 map <C-S> :w<CR>
 inoremap <C-S> <C-[>:w<CR>
 
+map <Leader>h :nohls<CR>
+
 let g:SimplyFold_docstring_preview=0
 let g:SimpylFold_fold_docstring=0
 let gSimpylFold_fold_import=0
