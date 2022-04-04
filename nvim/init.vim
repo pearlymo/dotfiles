@@ -85,7 +85,14 @@ let g:SimpylFold_fold_docstring=0
 let gSimpylFold_fold_import=0
 let g:SimpylFold_fold_blank=0
 
-au BufNewFile,BufRead *.py
+au BufNewFile,BufRead *.html,*.css,*.js
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set autoindent
+
+au BufNewFile,BufRead *.py,*.md,*.txt
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
