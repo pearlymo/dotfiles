@@ -1,3 +1,3 @@
-# Note
+# Installation
 
-My personal configurations.
+`./install.sh`
