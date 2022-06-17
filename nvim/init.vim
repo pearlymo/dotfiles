@@ -1,3 +1,6 @@
+highlight LineNr ctermfg=green ctermbg=black
+highlight ColorColumn ctermbg=black
+
 set nocompatible
 filetype off
 
@@ -73,11 +76,6 @@ map <C-S> :w<CR>
 inoremap <C-S> <C-[>:w<CR>
 
 map <Leader>h :nohls<CR>
-
-let g:SimplyFold_docstring_preview=0
-let g:SimpylFold_fold_docstring=0
-let gSimpylFold_fold_import=0
-let g:SimpylFold_fold_blank=0
 
 au BufNewFile,BufRead *.html,*.css,*.js
     \ set tabstop=2 |
