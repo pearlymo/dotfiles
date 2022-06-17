@@ -1,12 +1,6 @@
 set nocompatible
 filetype off
 
-call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
-    Plug 'jnurmine/Zenburn'
-call plug#end()
-
-autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-
 set clipboard+=unnamedplus
 
 set noswapfile
@@ -108,10 +102,3 @@ let python_highlight_all=1
 syntax on
 
 autocmd BufNewFile *.html 0r $HOME/.config/nvim/templates/html5.html
-
-if has('gui_running')
-	set background=dark
-	colorscheme solarized
-else
-	colorscheme zenburn
-endif
