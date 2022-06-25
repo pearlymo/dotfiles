@@ -100,3 +100,4 @@ let python_highlight_all=1
 syntax on
 
 autocmd BufNewFile *.html 0r $HOME/.config/nvim/templates/html5.html
+autocmd BufNewFile test*.py 0r $HOME/.config/nvim/templates/unittest.py
