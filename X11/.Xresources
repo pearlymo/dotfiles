@@ -1,35 +1,37 @@
-! black 236 238
-*.color0: #303030
-*.color8: #444444
-! red 167
-*.color1: #d75f5f
-*.color9: #d75f5f
-! green 108
-*.color2: #87AF87
-*.color10: #87AF87
-! yellow 221
-*.color3: #ffd75f
-*.color11: #ffd75f
-! blue 110
-*.color4: #87afd7
-*.color12: #87afd7
-! magenta 146
-*.color5: #afafd7
-*.color13: #afafd7
-! cyan 75
-*.color6: #afd7ff
-*.color14: #afd7ff
-! white 239 15
-*.color7: #e4e4e4
-*.color15: #ffffff
+! rxvt colorscheme: github.com/junegunn/seoul256.vim/blob/master/urxvt/seoul256
+
+! black
+*.color0: #4e4e4e
+*.color8: #626262
+! red
+*.color1: #d68787
+*.color9: #d75f87
+! green
+*.color2: #5f865f
+*.color10: #87af87
+! yellow
+*.color3: #d8af5f
+*.color11: #ffd787
+! blue
+*.color4: #85add4
+*.color12: #add4fb
+! magenta
+*.color5: #d7afaf
+*.color13: #ffafaf
+! cyan
+*.color6: #87afaf
+*.color14: #87d7d7
+! white
+*.color7: #d0d0d0
+*.color15: #e4e4e4
 
 URxvt*transparent: true
 URxvt*shading: 30
 
 URxvt*font: xft:JetBrainsMono:style=Regular:size=13:antialias=true
 
-*.foreground: #C6C6C6
-*.background: #1C1C1C
+*.foreground: #d0d0d0
+*.background: #3a3a3a
 *.cursorColor: #f0f0f0
 
 URxvt*borderLess: false

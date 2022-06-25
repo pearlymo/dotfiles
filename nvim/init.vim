@@ -1,5 +1,5 @@
-highlight LineNr ctermfg=green ctermbg=black
-highlight ColorColumn ctermbg=black
+colorscheme seoul256
+hi Normal guibg=NONE ctermbg=NONE
 
 set nocompatible
 filetype off
