@@ -1,5 +1,5 @@
 colorscheme seoul256
-hi Normal guibg=NONE ctermbg=NONE
+set background=dark
 
 set nocompatible
 filetype off
