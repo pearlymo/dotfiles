@@ -42,8 +42,8 @@ set undodir=$HOME/.config/nvim/undo
 set undolevels=10000
 set undoreload=10000
 
-set number
-set relativenumber
+set nonumber
+set norelativenumber
 
 set encoding=utf-8
 
