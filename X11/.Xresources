@@ -53,9 +53,9 @@ URxvt.keysym.Control-Shift-V: eval:paste_clipboard
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
-URxvt*tabbedex.tabbar-fg: 15
-URxvt*tabbedex.tabbar-bg: 236
-URxvt*tabbedex.tab-fg: 110
-URxvt*tabbedex.tab-bg: 236
+URxvt*tabbedex.tabbar-fg: 2 
+URxvt*tabbedex.tabbar-bg: 0
+URxvt*tabbedex.tab-fg: 3
+URxvt*tabbedex.tab-bg: 0
 URxvt*tabbedex.transparent: true
 URxvt*tabbedex.new-button: false
