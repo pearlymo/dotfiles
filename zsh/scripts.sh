@@ -14,8 +14,9 @@ wikipedia() {
 }
 
 gacp () {
-    git add $1
-    git commit -m "$2"
+    args=("${@}")
+    git add "${args[@]: 0 : ${#args[@]} - 1}"
+    git commit -m  "${args[${#arg[@]} - 1]}"
     git push
 }
 
