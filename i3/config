@@ -282,7 +282,7 @@ bar {
     status_command i3status --config ~/.config/i3/i3status.conf
 
     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    font pango:JetBrainsMono 12 
+    font pango:JetBrainsMono 10
 
     # Disable all tray icons
     tray_output none
