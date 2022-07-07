@@ -29,7 +29,9 @@ URxvt*font: xft:JetBrainsMono:style=Regular:size=13:antialias=true
 
 *.foreground: #d0d0d0
 *.background: #3a3a3a
-*.cursorColor: #f0f0f0
+*.cursorColor: #d0d0d0
+*.cursorColor2: #3a3a3a
+*.colorBD: #e4e4e4
 
 URxvt*borderLess: false
 URxvt*externalBorder: 0
