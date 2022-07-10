@@ -11,6 +11,15 @@ gacp () {
     git push
 }
 
+fd() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+}
+
+fh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -E 's/ *[0-9]*\*? *//' | sed -E 's/\\/\\\\/g')
+}
+
 # A function to shortcut g++ compiler for cpp using the options suggested from
 # learncpp.com for beginners
 # -pedantic-errors removes compiler plugins
