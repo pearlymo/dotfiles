@@ -1,6 +1,14 @@
 set nocompatible
 filetype plugin on
 
+call plug#begin()
+
+Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
 set noswapfile
 set encoding=utf-8
 set clipboard+=unnamedplus
