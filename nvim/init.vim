@@ -1,14 +1,32 @@
-colorscheme seoul256
-set background=dark
-
 set nocompatible
-filetype off
-
-set clipboard+=unnamedplus
+filetype plugin on
 
 set noswapfile
-
+set encoding=utf-8
+set clipboard+=unnamedplus
 set maxmempattern=2000000
+set visualbell
+set undofile
+set undodir=$HOME/.config/nvim/undo
+set undolevels=10000
+set undoreload=10000
+set hidden
+set nobackup
+set nowritebackup
+set nospell
+set ic
+set hls
+set showmatch
+syntax enable
+set nonumber
+set norelativenumber
+
+au BufNewFile,BufRead *.html,*.css,*.js
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set autoindent
 
 set textwidth=79
 set colorcolumn=80
@@ -19,81 +37,20 @@ set autoindent
 set expandtab
 set fileformat=unix
 
-set nospell
-set ic "make case insensitive for searches
-set hls "highlight searches
-set showmatch "shows matching pairs of brackets
-syntax enable "syntax highlighting is on
+colorscheme seoul256
+set background=dark
 
-set visualbell "disable bell sounds in vim
-
-set splitbelow
-set splitright
-
-"Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-" save undo trees in files
-set undofile
-set undodir=$HOME/.config/nvim/undo
-
-" number of undo saved
-set undolevels=10000
-set undoreload=10000
-
-set nonumber
-set norelativenumber
-
-set encoding=utf-8
-
-set inccommand=nosplit
-
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-"create and map , to <leader>
 let mapleader=","
 
-"split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-map <C-S> :w<CR>
-inoremap <C-S> <C-[>:w<CR>
-
+map <Leader>s :w<CR>
 map <Leader>h :nohls<CR>
 
-au BufNewFile,BufRead *.html,*.css,*.js
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
-    \ set expandtab |
-    \ set autoindent
-
-au BufNewFile,BufRead *.py,*.md,*.txt
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
-
-"Flagging Unnecessary Whitespace
+"Flag Unnecessary Whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
