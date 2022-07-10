@@ -69,6 +69,9 @@ nnoremap <C-H> <C-W><C-H>
 
 map <Leader>s :w<CR>
 map <Leader>h :nohls<CR>
+map <Leader>f :Files<CR>
+map <Leader>] :bn<CR>
+map <Leader>[ :bp<CR>
 
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
