@@ -48,6 +48,18 @@ set fileformat=unix
 colorscheme seoul256
 set background=dark
 
+let g:fzf_layout = {
+  \ 'window': {
+    \ 'border': 'top',
+    \ 'height': 9,
+    \ 'relative': v:false,
+    \ 'width': 1,
+    \ 'yoffset': 1,
+  \ }
+\ }
+
+let g:fzf_preview_window = []
+
 let mapleader=","
 
 nnoremap <C-J> <C-W><C-J>
@@ -58,7 +70,6 @@ nnoremap <C-H> <C-W><C-H>
 map <Leader>s :w<CR>
 map <Leader>h :nohls<CR>
 
-"Flag Unnecessary Whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
