@@ -9,6 +9,15 @@ ln -sf "$DOTFILES/nvim/init.vim" "$XDG_CONFIG_HOME/nvim"
 ln -sf "$DOTFILES/nvim/templates" "$XDG_CONFIG_HOME/nvim"
 ln -sf "$DOTFILES/nvim/colors" "$XDG_CONFIG_HOME/nvim"
 
+[ ! -f "$DOTFILES/nvim/autoload/plug.vim" ] \
+    && curl -fLo "$DOTFILES/nvim/autoload/plug.vim" --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+mkdir -p "$XDG_CONFIG_HOME/nvim/autoload"
+ln -sf "$DOTFILES/nvim/autoload/plug.vim" "$XDG_CONFIG_HOME/nvim/autoload/plug.vim"
+
+nvim --noplugin +PlugUpdate +qa
+
 # X11
 
 rm -rf "$XDG_CONFIG_HOME/X11"
