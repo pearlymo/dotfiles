@@ -78,6 +78,9 @@ map <Leader>f :FZF<CR>
 map <Leader>F :FZF /<CR>
 map <Leader>a :Ag<CR>
 
+let g:netrw_banner = 0
+let g:netrw_liststyle=3
+
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
