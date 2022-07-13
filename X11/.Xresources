@@ -39,7 +39,7 @@ URxvt*internalBorder: 0
 URxvt*scrollBar: false
 URxvt*saveLines: 5000
 
-URxvt*perl-ext-common: default,tabbedex,resize-font
+URxvt*perl-ext-common: default,tabbedex,font-size
                                            
 URxvt.keysym.Control-Shift-N: perl:tabbedex:new_tab
 URxvt.keysym.Control-Shift-K: perl:tabbedex:next_tab
@@ -47,6 +47,11 @@ URxvt.keysym.Control-Shift-J: perl:tabbedex:prev_tab
 URxvt.keysym.Control-Shift-R: perl:tabbedex:rename_tab
 URxvt.keysym.Control-Shift-H: perl:tabbedex:move_tab_left   
 URxvt.keysym.Control-Shift-L: perl:tabbedex:move_tab_right    
+
+URxvt.keysym.C-minus:     font-size:decglobal
+URxvt.keysym.C-plus:      font-size:incglobal
+URxvt.keysym.C-equal:     font-size:reset
+URxvt.keysym.C-question:  font-size:show
 
 URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
 URxvt.keysym.Control-Shift-V: eval:paste_clipboard
