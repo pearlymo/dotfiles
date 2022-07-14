@@ -1,9 +1,9 @@
 import unittest
 
-class TestSomething(unittest.TestCase):
+class Test(unittest.TestCase):
 
-    def test_something(self):
-        self.assertEqual(0, 0)
+    def test(self):
+        pass
 
 if __name__ == "__main__":
     unittest.main()
