@@ -12,13 +12,6 @@ setopt PUSHD_IGNORE_DUPS
 # Do not print the directory stack after using    
 setopt PUSHD_SILENT
 
-bindkey -v    
-export KEYTIMEOUT=1
-
-autoload -Uz edit-command-line    
-zle -N edit-command-line    
-bindkey -M vicmd v edit-command-line
-
 if [ "$(tty)" = "/dev/tty1" ];    
 then    
     pgrep i3 || exec startx "$XDG_CONFIG_HOME/X11/.xinitrc"    
