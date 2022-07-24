@@ -51,6 +51,9 @@ set background=dark
 
 let g:ale_linters = {'python': ['flake8', 'pylint']}
 let g:ale_fixers = {'python': ['autopep8', 'yapf']}
+
+let g:netrw_banner = 0
+let g:netrw_liststyle=3
 let g:fzf_layout = {
   \ 'window': {
     \ 'border': 'top',
@@ -78,11 +81,8 @@ map <Leader>p :bp<CR>
 map <Leader>t :tabe<CR>
 map <Leader>e :Explore<CR>
 map <Leader>f :FZF<CR>
-map <Leader>F :FZF /<CR>
-map <Leader>a :Ag<CR>
-
-let g:netrw_banner = 0
-let g:netrw_liststyle=3
+map <Leader>F :FZF ~<CR>
+map <Leader>a :Ag 
 map <F2> :ALEFix<CR>
 
 let python_highlight_all=1
