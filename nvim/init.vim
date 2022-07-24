@@ -6,6 +6,7 @@ call plug#begin()
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -48,6 +49,8 @@ set fileformat=unix
 colorscheme seoul256
 set background=dark
 
+let g:ale_linters = {'python': ['flake8', 'pylint']}
+let g:ale_fixers = {'python': ['autopep8', 'yapf']}
 let g:fzf_layout = {
   \ 'window': {
     \ 'border': 'top',
@@ -80,9 +83,8 @@ map <Leader>a :Ag<CR>
 
 let g:netrw_banner = 0
 let g:netrw_liststyle=3
+map <F2> :ALEFix<CR>
 
-highlight BadWhitespace ctermbg=red guibg=darkred
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
 syntax on
 
