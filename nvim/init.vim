@@ -51,6 +51,8 @@ set background=dark
 
 let g:ale_linters = {'python': ['flake8', 'pylint']}
 let g:ale_fixers = {'python': ['autopep8', 'yapf']}
+let g:ale_sign_column_always = 1
+highlight SignColumn ctermbg=black
 
 let g:netrw_banner = 0
 let g:netrw_liststyle=3
