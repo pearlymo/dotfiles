@@ -18,6 +18,10 @@ ln -sf "$DOTFILES/nvim/autoload/plug.vim" "$XDG_CONFIG_HOME/nvim/autoload/plug.v
 
 nvim --noplugin +PlugUpdate +qa
 
+# linter
+
+ln -sf "$DOTFILES/lintrc/.pylintrc" "$HOME"
+
 # X11
 
 rm -rf "$XDG_CONFIG_HOME/X11"
