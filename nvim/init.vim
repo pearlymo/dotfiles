@@ -87,6 +87,17 @@ map <F2> :ALEFix<CR>
 map <F3> :ALEToggle<CR>
 map <Leader>] :ALENextWrap<CR>
 map <Leader>[ :ALEPreviousWrap<CR>
+nnoremap <Leader>1 1gt
+nnoremap <Leader>2 2gt
+nnoremap <Leader>3 3gt
+nnoremap <Leader>4 4gt
+nnoremap <Leader>5 5gt
+nnoremap <Leader>6 1gt
+nnoremap <Leader>7 2gt
+nnoremap <Leader>8 3gt
+nnoremap <Leader>9 4gt
+nnoremap tl :tabnext<CR>
+nnoremap th :tabprev<CR>
 
 let python_highlight_all=1
 syntax on
