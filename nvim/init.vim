@@ -84,6 +84,9 @@ map <Leader>f :FZF<CR>
 map <Leader>F :FZF ~<CR>
 map <Leader>a :Ag 
 map <F2> :ALEFix<CR>
+map <F3> :ALEToggle<CR>
+map <Leader>] :ALENextWrap<CR>
+map <Leader>[ :ALEPreviousWrap<CR>
 
 let python_highlight_all=1
 syntax on
