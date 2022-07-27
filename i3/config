@@ -262,7 +262,6 @@ client.placeholder 	#000000 #0c0c0c $white2 #000000 #0c0c0c
 
 for_window [class="^.*"] border pixel 2
 gaps inner 5
-gaps outer 5
 
 bindsym $mod+Shift+t move scratchpad
 bindsym $mod+t scratchpad show
