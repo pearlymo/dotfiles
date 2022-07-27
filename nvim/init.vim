@@ -81,8 +81,8 @@ map <Leader>F :FZF ~<CR>
 map <Leader>a :Ag 
 map <F2> :ALEFix<CR>
 map <F3> :ALEToggle<CR>
-map <Leader>] :ALENextWrap<CR>
-map <Leader>[ :ALEPreviousWrap<CR>
+map ]a :ALENextWrap<CR>
+map [a :ALEPreviousWrap<CR>
 nnoremap <Leader>1 1gt
 nnoremap <Leader>2 2gt
 nnoremap <Leader>3 3gt
