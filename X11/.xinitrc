@@ -5,8 +5,7 @@ udiskie &
 setxkbmap -option 'caps:ctrl_modifier';xcape -e 'Caps_Lock=Escape'&        
 # setxkbmap -option caps:escape
 
+xset s off&
+xset -dpms&
+
 exec i3
-
-xset s off
-xset -dpms
-
